@@ -1,10 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-require("dotenv").config();
+import "dotenv/config";
 
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -48,6 +47,6 @@ app.post("/delete", async (req, res) => {
   res.redirect("/");
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(3000, () => {
+  console.log(`Server running on port 3000`);
 });
